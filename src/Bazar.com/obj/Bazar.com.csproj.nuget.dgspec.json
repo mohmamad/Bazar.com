@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\src\\Bazar.com\\Bazar.com.csproj": {}
+    "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\Bazar.com\\src\\Bazar.com\\Bazar.com.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\src\\Bazar.com\\Bazar.com.csproj": {
+    "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\Bazar.com\\src\\Bazar.com\\Bazar.com.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\src\\Bazar.com\\Bazar.com.csproj",
+        "projectUniqueName": "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\Bazar.com\\src\\Bazar.com\\Bazar.com.csproj",
         "projectName": "Bazar.com",
-        "projectPath": "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\src\\Bazar.com\\Bazar.com.csproj",
+        "projectPath": "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\Bazar.com\\src\\Bazar.com\\Bazar.com.csproj",
         "packagesPath": "C:\\Users\\GoldenTech\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\src\\Bazar.com\\obj\\",
+        "outputPath": "C:\\Users\\GoldenTech\\Desktop\\study\\thisSimister\\DOS\\project\\Bazar.com\\src\\Bazar.com\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
