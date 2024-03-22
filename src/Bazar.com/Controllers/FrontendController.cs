@@ -7,14 +7,34 @@ namespace Bazar.com.Controllers
     [Route("api/book")]
     public class FrontendController : Controller
     {
-        public FrontendController()
+        private readonly HttpClient _httpClient;
+        public FrontendController(IHttpClientFactory httpClientFactory)
         {
-
+            _httpClient = httpClientFactory.CreateClient();
         }
-        [HttpGet("{bookId}/search")]
-        public async Task<ActionResult<BookDto>> GetBookById(Guid bookId)
+        [HttpGet("{bookId}/info")]
+        public async Task<ActionResult<BookDto>> GetBookById(int bookId)
         {
-            return Ok();
+            try
+            {
+                HttpResponseMessage response = await _httpClient.GetAsync($"https://localhost:7093/api/catalog/{bookId}/info");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    return Ok(responseBody);
+                }
+                else
+                {
+                    return StatusCode((int)response.StatusCode, "Error occurred while calling the external API.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+           
         }
 
         [HttpGet("{bookName}/search")]
