@@ -1,5 +1,8 @@
 using Catalog.DataAccess;
+using Catalog.DataAccess.Interfaces;
+using Catalog.DataAccess.Repositories;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +12,10 @@ builder.Services.AddDbContext<CatalogDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
-
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddDbContext<CatalogDbContext>();
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
 
 // Add services to the container.
 
