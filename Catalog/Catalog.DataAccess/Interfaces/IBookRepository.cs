@@ -7,5 +7,6 @@ namespace Catalog.DataAccess.Interfaces
         public Task<IEnumerable<Book>> GetBookByIdAsync(int bookId);
 
         public Task<IEnumerable<Book>> GetBookByTopicAsync(string topic);
+        public Task<bool> PurchaseBook(int bookId);
     }
 }

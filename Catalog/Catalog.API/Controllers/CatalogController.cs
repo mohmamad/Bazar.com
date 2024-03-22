@@ -32,5 +32,20 @@ namespace Catalog.API.Controllers
             var bookDto = _mapper.Map<IEnumerable<BookSearchDto>>(book);
             return Ok(bookDto);
         }
+
+        [HttpPost("{bookId}/purchase")]
+        public async Task<ActionResult> PurchaseBook(int bookId)
+        {
+            var response = await _bookRepository.PurchaseBook(bookId);
+            if (response)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+            
+        }
     }
 }

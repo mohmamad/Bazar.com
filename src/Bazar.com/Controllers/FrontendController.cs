@@ -64,8 +64,27 @@ namespace Bazar.com.Controllers
         }
 
         [HttpPost("{bookId}/Order")]
-        public async Task<ActionResult<BookDto>> OrderBookById(string bookName)
+        public async Task<ActionResult<BookDto>> OrderBookById(int bookId)
         {
+            try
+            {
+                HttpResponseMessage response = await _httpClient.PostAsync($"https://localhost:7151/api/book/{bookId}/purchase\r\n",null);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    return Ok(responseBody);
+                }
+                else
+                {
+                    return StatusCode((int)response.StatusCode, "Error occurred while calling the external API.");
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
             return Ok();
         }
     }
